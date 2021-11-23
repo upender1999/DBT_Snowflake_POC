@@ -1,0 +1,36 @@
+
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+name: dbt_build  # build numbering format
+resources:
+  containers: 
+  - container: mycontainer
+    image: python:3.7
+    options: -u root
+
+trigger:
+- master
+
+pool:
+  Default
+
+stages:
+- stage: stage1
+  jobs:
+  - job: job1
+    displayName: 'Downloading Profile for Snowflake'
+    steps:
+    - task: DownloadSecureFile@1
+      name: SettingProfile
+      inputs:
+        secureFile: 'profiles.yml'
+- stage: stage2 
+  jobs:
+  - job: job2
+    displayName: Installing Profile for Snowflake
+    steps: 
+    - script: echo Installing $(SettingProfile.secureFilePath) to the ~/.dbt...
+              mkdir ~/.dbt
+              cp $(SettingProfile.secureFilePath) ~/.dbt/profiles.yml
