@@ -1,0 +1,39 @@
+
+version: 2
+
+sources:
+  - name: src1 # this is the source_name.
+    database:  DBT_DEMO_SOURCES  #DBT_DB #this is the database_name
+    schema:  DBT #DBT_SCHEMA #this is the schema_name
+    tables:
+      - name: Demographics
+        columns:
+          - name: POLICYID
+            tests:
+              - not_null
+              - unique
+              - check_positive
+          - name: ALLIGNMENT
+            tests:
+              - accepted_values:
+                  values: ['Type-1', 'Type-2', 'Type-3', 'Type-4', 'Type-5', 'Type-6', 'Type-7', 'Type-8', 'Type-9', 'Type-10']
+      - name: Stats 
+        columns:
+          - name: POLICYID
+            tests:
+              - not_null
+              - unique
+              - check_positive
+          - name: CLAIMED
+            tests:
+              - check_positive
+          - name: INSU_AMOUNT
+            tests:
+              - check_positive
+
+      - name: parent_table #FL_insurance_1 # this is the table_name
+        columns:
+          - name: policyid #colmun name
+            tests:
+              - unique
+              - not_null  

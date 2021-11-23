@@ -1,0 +1,14 @@
+
+version: 2
+
+sources:
+  - name: src2 # this is the source_name.
+    database:  DBT_DEMO_SOURCES  #DBT_DB #this is the database_name
+    schema:  DBT #DBT_SCHEMA # this is the schema_name
+    tables:
+      - name: parent_table #FL_insurance_1 # this is the table_name
+        columns:
+          - name: policyid #colmun name
+            tests:
+              - unique
+              - not_null  

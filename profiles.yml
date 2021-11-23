@@ -1,0 +1,15 @@
+snowflake:
+  target: sys1
+  outputs:
+    sys1:
+      type: snowflake
+      account: valuemomentumpartner.us-east-1
+      # User/password auth
+      user: ashok.kumili@valuemomentum.com
+      password: Vam#1vam
+      role: ACCOUNTADMIN
+      database: DBT_DEMO_SOURCES
+      warehouse: DBT_WH
+      schema: DBT
+      threads: 10
+      client_session_keep_alive: False

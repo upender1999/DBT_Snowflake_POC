@@ -7,7 +7,7 @@ version: '1.0.0'
 config-version: 2
 
 # This setting configures which "profile" dbt uses for this project.
-profile: 'default'
+profile: 'snowflake'
 
 # These configurations specify where dbt should look for different types of files.
 # The `source-paths` config, for example, states that models in this project can be
@@ -36,3 +36,16 @@ models:
     # Config indicated by + and applies to all files under models/example/
     example:
       +materialized: view
+    Permanent_table:
+      #+transient: false
+      +transient: "{{ False if target.name == 'sys1' else True }}"
+#Config seeds
+seeds:
+  my_new_project:
+    +quote_columns: false
+    +post-hook: "{{ post_hook_seed('FL_insurance_1', 'parent_table') }}"
+    #+post-hook: "{{ post_hook_seed('FL_insurance_1', 'parent_table1') }}"
+    +post-hook: "{{ post_hook_drop('PMT_t_cr_cl_amt') }}"
+ # my_new_project:
+  #  mappings:
+   #   +quote_columns: true  
