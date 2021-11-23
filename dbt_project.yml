@@ -45,7 +45,6 @@ seeds:
     +quote_columns: false
     +post-hook: "{{ post_hook_seed('FL_insurance_1', 'parent_table') }}"
     #+post-hook: "{{ post_hook_seed('FL_insurance_1', 'parent_table1') }}"
-    +post-hook: "{{ post_hook_drop('PMT_t_cr_cl_amt') }}"
  # my_new_project:
   #  mappings:
    #   +quote_columns: true  
