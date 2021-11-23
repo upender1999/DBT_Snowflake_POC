@@ -1,7 +1,7 @@
 #Install the latest pip
 pip install dbt --user
 echo $(pwd)
-cd _upender1999_DBT_POC
+cd _upender1999_DBT_Snowflake_POC
 dbt deps
 dbt compile
 dbt seed
