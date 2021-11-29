@@ -31,7 +31,7 @@ sources:
             tests:
               - check_positive
 
-      - name: parent_table #FL_insurance_1 # this is the table_name
+      - name: policyage #FL_insurance_1 # this is the table_name
         columns:
           - name: policyid #colmun name
             tests:

@@ -2,7 +2,7 @@
 
 with source_data as (
 
-SELECT policyid,country,statecode,line,ALLIGNMENT FROM {{ source('src1', 'parent_table') }}
+SELECT policyid,country,statecode,line,ALLIGNMENT FROM {{ source('src1', 'policyage') }}
 
 ),
 final as(
