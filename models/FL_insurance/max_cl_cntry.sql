@@ -2,10 +2,8 @@
 
 with source_data as (
 
-SELECT  d.policyid,max(s.claimed) as claimed,d.country FROM {{ source('src1', 'Demographics') }} as d
-join
-{{ source('src1', 'Stats') }} as s
-on d.policyid = s.policyid
+SELECT  d.policyid,max(d.claimed) as claimed,d.country FROM {{ source('src1', 'policyage') }} as d
+
 group by d.country,d.policyid
 ),
 final as(
