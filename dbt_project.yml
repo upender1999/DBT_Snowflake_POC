@@ -43,7 +43,7 @@ models:
 seeds:
   my_new_project:
     +quote_columns: false
-    +post-hook: "{{ post_hook_seed('FL_insurance_1', 'parent_table') }}"
+    +post-hook: "{{ post_hook_seed('FL_insurance_1', 'policyage') }}"
     #+post-hook: "{{ post_hook_seed('FL_insurance_1', 'parent_table1') }}"
  # my_new_project:
   #  mappings:
