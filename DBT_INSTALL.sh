@@ -9,4 +9,4 @@ dbt run
 dbt test
 dbt docs generate
 dbt docs serve --port 8001
-# End of the program
+# End of the program.

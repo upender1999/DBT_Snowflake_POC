@@ -39,7 +39,7 @@ models:
     Permanent_table:
       #+transient: false
       +transient: "{{ False if target.name == 'sys1' else True }}"
-#Config seeds
+#Config seeds.
 seeds:
   my_new_project:
     +quote_columns: false
