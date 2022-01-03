@@ -6,7 +6,7 @@ dbt deps
 dbt compile
 dbt seed
 #dbt run
-dbt run -t sys1
+dbt run -t sys2
 dbt test
 dbt docs generate
 dbt docs serve --port 8001

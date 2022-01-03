@@ -36,9 +36,9 @@ models:
     # Config indicated by + and applies to all files under models/example/
     example:
       +materialized: view
-    Permanent_table:
+    #Permanent_table:
       #+transient: false
-      +transient: "{{ False if target.name == 'sys1' else True }}"
+      #+transient: "{{ False if target.name == 'sys1' else True }}"
 #Config seeds.
 seeds:
   my_new_project:
