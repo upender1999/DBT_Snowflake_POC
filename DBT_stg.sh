@@ -5,7 +5,8 @@ cd _upender1999_DBT_Snowflake_POC
 dbt deps
 dbt compile
 dbt seed
-dbt run
+#dbt run
+dbt run -t sys1
 dbt test
 dbt docs generate
 dbt docs serve --port 8001
