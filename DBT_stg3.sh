@@ -8,6 +8,6 @@ dbt seed
 #dbt run
 dbt run -t sys3
 dbt test
-dbt docs generate
-dbt docs serve --port 8001
+#dbt docs generate
+#dbt docs serve --port 8001
 # End of the program.
