@@ -5,7 +5,7 @@ cd _upender1999_DBT_Snowflake_POC
 dbt deps
 dbt compile
 dbt seed
-dbt run --target sys1
+dbt run --target sys2
 #dbt run
 #dbt run -t sys2
 dbt test
