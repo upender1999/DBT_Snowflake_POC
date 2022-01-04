@@ -6,8 +6,8 @@ dbt deps
 dbt compile
 dbt seed
 #dbt run
-dbt run -t sys4
+dbt run --target sys4
 dbt test
-dbt docs generate
-dbt docs serve --port 8001
+#dbt docs generate
+#dbt docs serve --port 8001
 # End of the program.

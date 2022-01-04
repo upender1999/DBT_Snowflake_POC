@@ -1,4 +1,4 @@
-#Install the latest pip
+#Install the latest pip.
 pip install dbt --user
 echo $(pwd)
 cd _upender1999_DBT_Snowflake_POC
